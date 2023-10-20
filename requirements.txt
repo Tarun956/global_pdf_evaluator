@@ -1,6 +1,4 @@
 PyPDF2
 PyMuPDF
-python-docx
-nltk
 langdetect
-from PyPDF2 import PdfReader
+
