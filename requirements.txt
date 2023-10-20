@@ -1,4 +1,5 @@
-PyPDF2
+fastapi
+uvicorn
 PyMuPDF
 langdetect
-
+pdf2image
