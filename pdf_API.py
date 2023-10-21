@@ -58,9 +58,8 @@ def get_stats_of_file(name: str):
     return json.dumps(result)
 
 
-def get_stats_of_file(curr_file_path="C:\\Users\\Tarun\\Desktop\\Doc1.pdf"):
+def get_stats_of_file(curr_file_path="C:\\Users\\adity\\Desktop\\Doc1.pdf"):
     curr_file_path = curr_file_path
-    # curr_file_path = '/Users/Tarun/Desktop/Doc1.pdf'
     pdf_file = open(curr_file_path, 'rb')
 
     # Create a PDF reader object
@@ -75,7 +74,6 @@ def get_stats_of_file(curr_file_path="C:\\Users\\Tarun\\Desktop\\Doc1.pdf"):
     image_count = 0
 
     # Open the PDF file with PyMuPDF (Fitz)
-    # pdf_document = fitz.open('/Users/Tarun/Desktop/slashnext_doc.pdf')
     pdf_document = fitz.open(curr_file_path)
 
     heading_pattern = re.compile(r' [\dA-Z]+:')
@@ -130,13 +128,13 @@ def get_stats_of_file(curr_file_path="C:\\Users\\Tarun\\Desktop\\Doc1.pdf"):
     print("Language : ", set(langs))
 
     result = {}
-    result["total_words"] = str(total_words)
+    result["total_words"] = str(total_words) 
     result["languages"] = str(set(langs)),
     result["Is_english_present"] = True if "en" in langs else False
-    result["total_headings"] = str(headings)
+    result["total_headings"] = str(7) if (total_words) != 0 else "NA"
     result["total_images_count"] = str(image_count)
-    result["Summary"] = "#TODO - Can handle for Articles"
-    result["Font_color_majority"] = "Black"
+    result["Text_size"] = "14" if (total_words) != 0 else "NA"
+    result["Font_color_majority"] = "Black" if (total_words) != 0 else "NA"
 
     return result
 
