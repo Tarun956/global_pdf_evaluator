@@ -58,9 +58,9 @@ def get_stats_of_file(name: str):
     return json.dumps(result)
 
 
-def get_stats_of_file(curr_file_path="C:\\Users\\adity\\Desktop\\Doc1.pdf"):
+def get_stats_of_file(curr_file_path="C:\\Users\\Tarun\\Desktop\\Doc1.pdf"):
     curr_file_path = curr_file_path
-    # curr_file_path = '/Users/kodali.praveen/Desktop/Doc1.pdf'
+    # curr_file_path = '/Users/Tarun/Desktop/Doc1.pdf'
     pdf_file = open(curr_file_path, 'rb')
 
     # Create a PDF reader object
@@ -75,7 +75,7 @@ def get_stats_of_file(curr_file_path="C:\\Users\\adity\\Desktop\\Doc1.pdf"):
     image_count = 0
 
     # Open the PDF file with PyMuPDF (Fitz)
-    # pdf_document = fitz.open('/Users/kodali.praveen/Desktop/slashnext_doc.pdf')
+    # pdf_document = fitz.open('/Users/Tarun/Desktop/slashnext_doc.pdf')
     pdf_document = fitz.open(curr_file_path)
 
     heading_pattern = re.compile(r' [\dA-Z]+:')
